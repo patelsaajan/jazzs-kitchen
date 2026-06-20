@@ -15,9 +15,14 @@
   /* Display sizes */
   --text-wordmark: 84px;
   --text-wordmark--line-height: 0.9;
+  --text-section: 52px;
+  --text-section--line-height: 1.02;
+  --text-quote: 44px;
+  --text-quote--line-height: 1.18;
 
   /* Brand palette */
   --color-jk-cream: #faf0de;
+  --color-jk-cream-light: #fffcf5;
   --color-jk-saffron: #e8962b;
   --color-jk-saffron-light: #f0a23a;
   --color-jk-saffron-dark: #c77c18;
@@ -36,18 +41,46 @@
   --color-jk-carousel: #ece0c8;
   --color-jk-success: #2e6b47;
 
+  /* Recipes menu */
+  --color-jk-row-active: #fbf4e6;
+  --color-jk-num-muted: #e2cfb0;
+  --color-jk-chevron: #c7b79c;
+
+  /* Spice level chips */
+  --color-jk-mild-bg: #eaf3ec;
+  --color-jk-mild-text: #2e6b47;
+  --color-jk-mild-border: #cde3d3;
+  --color-jk-medium-bg: #fbead0;
+  --color-jk-medium-text: #a6611a;
+  --color-jk-medium-border: #ead3ac;
+  --color-jk-hot-bg: #f7dcd3;
+  --color-jk-hot-text: #b23e22;
+  --color-jk-hot-border: #eec6ba;
+
+  /* Footer (on ink) */
+  --color-jk-footer-text: #ebd9be;
+  --color-jk-footer-muted: #c7b292;
+  --color-jk-footer-dim: #9a8467;
+
   /* Radii */
   --radius-input: 13px;
   --radius-btn: 14px;
   --radius-chip: 15px;
+  --radius-row: 16px;
+  --radius-photo: 18px;
   --radius-card: 22px;
+  --radius-panel: 24px;
   --radius-carousel: 26px;
 
   /* Elevation */
-  --shadow-card: 0 22px 44px -26px rgba(42, 26, 18, 0.45);
-  --shadow-carousel: 0 28px 56px -24px rgba(42, 26, 18, 0.5);
+  --shadow-card: 0 12px 26px -24px rgba(42, 26, 18, 0.3);
+  --shadow-carousel: 0 14px 30px -22px rgba(42, 26, 18, 0.32);
+  --shadow-panel: 0 16px 34px -26px rgba(42, 26, 18, 0.36);
+  --shadow-photo: 0 14px 30px -24px rgba(42, 26, 18, 0.4);
+  --shadow-cta-card: 0 26px 56px -28px rgba(0, 0, 0, 0.6);
   --shadow-badge: 0 6px 16px -6px rgba(42, 26, 18, 0.5);
   --shadow-chip: 0 2px 0 rgba(42, 26, 18, 0.04);
+  --shadow-row-active: inset 3px 0 0 var(--color-jk-red);
 
   /* Chunky pressable CTA shadow (rest + pressed) */
   --shadow-cta: 0 6px 0 var(--color-jk-saffron-dark);

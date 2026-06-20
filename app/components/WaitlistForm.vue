@@ -1,4 +1,18 @@
 <script setup lang="ts">
+withDefaults(
+  defineProps<{
+    heading?: string
+    subheading?: string
+    /** 'hero' = left-aligned header; 'cta' = centred, larger header. */
+    variant?: 'hero' | 'cta'
+  }>(),
+  {
+    heading: 'Be first to know when we open',
+    subheading: "Join the list — we'll let you know the moment we start delivering.",
+    variant: 'hero'
+  }
+)
+
 const mealsOptions = ['1–2 meals', '3–4 meals', '5–7 meals', 'Most nights', 'Not sure yet']
 const sourceOptions = [
   'Facebook',
@@ -43,16 +57,22 @@ function reset() {
 </script>
 
 <template>
-  <div class="flex min-h-0 flex-1 flex-col rounded-card border-[1.5px] border-jk-card-border bg-white p-6 shadow-card">
+  <div class="flex h-full flex-col">
     <!-- Sign-up form -->
     <form
       v-if="!submitted"
       class="flex h-full flex-col gap-3"
       @submit.prevent="onSubmit"
     >
-      <div class="flex flex-col gap-0.5">
-        <span class="font-display text-2xl font-bold leading-tight text-jk-ink">Be first to know when we open</span>
-        <span class="text-sm text-jk-subtext">Join the list — we'll let you know the moment we start delivering.</span>
+      <div
+        class="flex flex-col gap-1"
+        :class="variant === 'cta' ? 'mb-0.5 items-center text-center' : ''"
+      >
+        <span
+          class="font-display font-bold leading-tight text-jk-ink"
+          :class="variant === 'cta' ? 'text-3xl' : 'text-2xl'"
+        >{{ heading }}</span>
+        <span class="text-sm text-jk-subtext">{{ subheading }}</span>
       </div>
 
       <div class="flex gap-3">

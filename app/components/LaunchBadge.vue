@@ -1,8 +1,12 @@
 <script setup lang="ts">
-defineProps<{
-  /** Render the translucent, shadowed variant used on top of the photo. */
-  overlay?: boolean
-}>()
+withDefaults(
+  defineProps<{
+    /** Render the translucent, shadowed variant used over a photo / dark bg. */
+    overlay?: boolean
+    text?: string
+  }>(),
+  { text: 'Launching in Romford' }
+)
 </script>
 
 <template>
@@ -11,6 +15,6 @@ defineProps<{
     :class="overlay ? 'bg-jk-surface/95 shadow-badge' : 'bg-jk-badge'"
   >
     <span class="size-2 rounded-full bg-jk-red animate-pulse-dot" />
-    Launching in Romford
+    {{ text }}
   </div>
 </template>
