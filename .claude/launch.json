@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jazz-kitchen",
+      "runtimeExecutable": "node_modules/.bin/nuxt",
+      "runtimeArgs": ["dev"],
+      "port": 3000
+    }
+  ]
+}

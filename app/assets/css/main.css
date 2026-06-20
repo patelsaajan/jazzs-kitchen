@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* ------------------------------------------------------------------ *
+ * Jazz Kitchen design tokens
+ * Derived from the Claude Design hi-fi handoff. These generate the
+ * standard Tailwind utilities (bg-jk-*, text-jk-*, border-jk-*,
+ * rounded-card, shadow-card, font-display, animate-pulse-dot, ...).
+ * ------------------------------------------------------------------ */
+@theme {
+  /* Type families */
+  --font-display: "Baloo 2", cursive;
+  --font-body: "Nunito", sans-serif;
+
+  /* Display sizes */
+  --text-wordmark: 84px;
+  --text-wordmark--line-height: 0.9;
+
+  /* Brand palette */
+  --color-jk-cream: #faf0de;
+  --color-jk-saffron: #e8962b;
+  --color-jk-saffron-light: #f0a23a;
+  --color-jk-saffron-dark: #c77c18;
+  --color-jk-red: #c23b1b;
+  --color-jk-ink: #2a1a12;
+  --color-jk-tagline: #6a5644;
+  --color-jk-subtext: #8a7a64;
+  --color-jk-helper: #9a8a74;
+  --color-jk-placeholder: #a89a82;
+  --color-jk-badge: #fbe6c2;
+  --color-jk-badge-text: #7a4a12;
+  --color-jk-card-border: #efe2c9;
+  --color-jk-border: #e5d6bc;
+  --color-jk-surface: #fffdf8;
+  --color-jk-chip-hover: #fdf3e0;
+  --color-jk-carousel: #ece0c8;
+  --color-jk-success: #2e6b47;
+
+  /* Radii */
+  --radius-input: 13px;
+  --radius-btn: 14px;
+  --radius-chip: 15px;
+  --radius-card: 22px;
+  --radius-carousel: 26px;
+
+  /* Elevation */
+  --shadow-card: 0 22px 44px -26px rgba(42, 26, 18, 0.45);
+  --shadow-carousel: 0 28px 56px -24px rgba(42, 26, 18, 0.5);
+  --shadow-badge: 0 6px 16px -6px rgba(42, 26, 18, 0.5);
+  --shadow-chip: 0 2px 0 rgba(42, 26, 18, 0.04);
+
+  /* Chunky pressable CTA shadow (rest + pressed) */
+  --shadow-cta: 0 6px 0 var(--color-jk-saffron-dark);
+  --shadow-cta-active: 0 3px 0 var(--color-jk-saffron-dark);
+
+  /* Motion */
+  --animate-pulse-dot: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.7);
+    opacity: 0.45;
+  }
+}
