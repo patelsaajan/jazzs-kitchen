@@ -12,13 +12,13 @@ const chips = ['Always made fresh, never frozen', 'Delivered locally in Romford'
       loading="lazy"
       class="absolute inset-0 size-full object-cover"
     />
-    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-jk-ink/65 to-jk-ink/60" />
+    <div class="pointer-events-none absolute inset-0 bg-linear-to-b from-jk-ink/65 to-jk-ink/60" />
 
-    <div class="relative z-[1] mx-auto flex max-w-[660px] flex-col items-center gap-5">
+    <div class="relative z-10 mx-auto flex max-w-165 flex-col items-center gap-5">
       <LaunchBadge overlay text="Launching soon in Romford" />
 
       <!-- form card -->
-      <div class="w-full rounded-panel border-[1.5px] border-jk-card-border bg-white p-8 shadow-cta-card lg:p-9">
+      <div class="w-full rounded-panel border-2 border-jk-card-border bg-white p-8 shadow-cta-card lg:p-9">
         <WaitlistForm
           variant="cta"
           heading="Don't miss our first delivery"
@@ -33,7 +33,7 @@ const chips = ['Always made fresh, never frozen', 'Delivered locally in Romford'
           :key="chip"
           class="inline-flex items-center gap-2.5 rounded-full border border-jk-surface/30 bg-jk-surface/15 px-4.5 py-2.5 text-sm font-semibold text-jk-cream"
         >
-          <span class="size-[7px] rounded-full bg-jk-saffron" />
+          <span class="size-2 rounded-full bg-jk-saffron" />
           {{ chip }}
         </div>
       </div>

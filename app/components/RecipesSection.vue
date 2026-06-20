@@ -86,18 +86,18 @@ const dish = computed(() => dishes[selected.value]!)
 </script>
 
 <template>
-  <section id="recipes" class="border-t-[1.5px] border-jk-card-border bg-jk-cream-light px-6 py-20 lg:px-16 lg:py-[86px]">
-    <div class="mx-auto max-w-[1312px]">
+  <section id="recipes" class="border-t-2 border-jk-card-border bg-jk-cream-light px-6 py-20 lg:px-16 lg:py-21.5">
+    <div class="mx-auto max-w-328">
       <!-- header -->
       <div class="mb-11 flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
-        <div class="max-w-[620px]">
-          <div class="mb-3 text-sm font-bold uppercase tracking-[2px] text-jk-red">Straight from the pot</div>
+        <div class="max-w-155">
+          <div class="mb-3 text-sm font-bold uppercase tracking-widest text-jk-red">Straight from the pot</div>
           <h2 class="font-display text-4xl font-extrabold tracking-tight text-jk-ink lg:text-section">A taste of the menu</h2>
           <p class="mt-3.5 text-lg leading-relaxed text-jk-tagline">
             The dishes Jazz grew up on — slow-cooked, properly spiced, and made the way her mum taught her. Here's a little of what's coming to your door.
           </p>
         </div>
-        <div class="inline-flex shrink-0 items-center rounded-full border-[1.5px] border-jk-saffron bg-jk-badge px-4.5 py-2.5 font-display text-[15px] font-bold text-jk-badge-text">
+        <div class="inline-flex shrink-0 items-center rounded-full border-2 border-jk-saffron bg-jk-badge px-4.5 py-2.5 font-display text-sm font-bold text-jk-badge-text">
           Full menu at launch
         </div>
       </div>
@@ -105,26 +105,26 @@ const dish = computed(() => dishes[selected.value]!)
       <!-- interactive menu -->
       <div class="grid items-stretch gap-6 lg:grid-cols-[1.08fr_1fr]">
         <!-- LEFT: selected dish -->
-        <div class="relative min-h-[496px] overflow-hidden rounded-panel border-[1.5px] border-jk-card-border bg-jk-carousel shadow-panel">
+        <div class="relative min-h-72 overflow-hidden rounded-panel border-2 border-jk-card-border bg-jk-carousel shadow-panel sm:min-h-96 lg:min-h-124">
           <NuxtImg
             :src="dish.img"
             :alt="dish.name"
             loading="lazy"
             class="absolute inset-0 size-full object-cover"
           />
-          <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent from-[38%] to-jk-ink/75" />
+          <div class="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent from-38% to-jk-ink/75" />
 
           <span
             v-if="dish.tag"
             class="absolute left-7 top-6 inline-flex items-center rounded-full bg-jk-red px-4 py-2 font-display text-sm font-bold tracking-wide text-white"
           >{{ dish.tag }}</span>
 
-          <div class="absolute inset-x-7 bottom-7 flex flex-col gap-3">
-            <div class="font-display text-[46px] font-extrabold leading-none tracking-tight text-jk-surface">{{ dish.name }}</div>
-            <p class="max-w-[460px] text-[17px] leading-relaxed text-white/90">{{ dish.desc }}</p>
-            <div class="mt-1 flex items-center gap-3">
+          <div class="absolute inset-x-5 bottom-5 flex flex-col gap-2 lg:inset-x-7 lg:bottom-7 lg:gap-3">
+            <div class="font-display text-3xl font-extrabold leading-none tracking-tight text-jk-surface sm:text-4xl lg:text-5xl">{{ dish.name }}</div>
+            <p class="hidden max-w-115 text-base leading-relaxed text-white/90 sm:block lg:text-lg">{{ dish.desc }}</p>
+            <div class="flex items-center gap-3 lg:mt-1">
               <span
-                class="inline-flex items-center rounded-full border px-3.5 py-1 text-[13px] font-bold"
+                class="inline-flex items-center rounded-full border px-3.5 py-1 text-xs font-bold"
                 :class="spiceClasses[dish.spice]"
               >{{ dish.spiceLabel }}</span>
               <span class="text-sm font-semibold text-white/85">{{ dish.meta }}</span>
@@ -133,7 +133,7 @@ const dish = computed(() => dishes[selected.value]!)
         </div>
 
         <!-- RIGHT: clickable number board -->
-        <div class="flex flex-col justify-between rounded-panel border-[1.5px] border-jk-card-border bg-white p-3 shadow-panel">
+        <div class="flex flex-col justify-between rounded-panel border-2 border-jk-card-border bg-white p-3 shadow-panel">
           <button
             v-for="(d, i) in dishes"
             :key="d.name"
@@ -144,11 +144,11 @@ const dish = computed(() => dishes[selected.value]!)
             @click="selected = i"
           >
             <span
-              class="w-9 text-center font-display text-[34px] font-extrabold leading-none"
+              class="w-9 text-center font-display text-4xl font-extrabold leading-none"
               :class="i === selected ? 'text-jk-red' : 'text-jk-num-muted'"
             >{{ i + 1 }}</span>
             <span class="flex flex-1 flex-col gap-0.5">
-              <span class="font-display text-[22px] font-bold leading-tight text-jk-ink">{{ d.name }}</span>
+              <span class="font-display text-xl font-bold leading-tight text-jk-ink">{{ d.name }}</span>
               <span class="text-sm font-semibold text-jk-subtext">{{ d.rowMeta }}</span>
             </span>
             <UIcon name="i-lucide-chevron-right" class="size-5 text-jk-chevron" />

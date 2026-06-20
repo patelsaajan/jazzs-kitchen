@@ -37,7 +37,7 @@ const name = ref('')
 
 // Shared field styling — applied to the inner control of each Nuxt UI field.
 const fieldUi = {
-  base: 'w-full rounded-input border-[1.6px] border-jk-border bg-jk-surface px-4 py-3 text-base text-jk-ink transition placeholder:text-jk-placeholder focus-visible:border-jk-saffron focus-visible:ring-2 focus-visible:ring-jk-saffron/20'
+  base: 'w-full rounded-input border-2 border-jk-border bg-jk-surface px-4 py-3 text-base text-jk-ink transition placeholder:text-jk-placeholder focus-visible:border-jk-saffron focus-visible:ring-2 focus-visible:ring-jk-saffron/20'
 }
 
 function onSubmit() {
@@ -75,7 +75,7 @@ function reset() {
         <span class="text-sm text-jk-subtext">{{ subheading }}</span>
       </div>
 
-      <div class="flex gap-3">
+      <div class="flex flex-col gap-3 sm:flex-row">
         <UInput
           v-model="form.first"
           required
@@ -104,7 +104,7 @@ function reset() {
         class="w-full"
       />
 
-      <div class="flex gap-3">
+      <div class="flex flex-col gap-3 sm:flex-row">
         <USelect
           v-model="form.meals"
           :items="mealsOptions"
@@ -133,7 +133,7 @@ function reset() {
         class="mt-1 rounded-btn bg-jk-saffron py-4 font-display text-lg font-bold text-jk-ink shadow-cta transition hover:bg-jk-saffron-light active:translate-y-1 active:shadow-cta-active"
       />
 
-      <div class="mt-0.5 text-center text-[13px] text-jk-helper">No spam, ever — just good food and the odd recipe.</div>
+      <div class="mt-0.5 text-center text-xs text-jk-helper">No spam, ever — just good food and the odd recipe.</div>
     </form>
 
     <!-- Success state -->

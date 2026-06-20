@@ -54,13 +54,13 @@ onUnmounted(() => timer && clearInterval(timer))
 </script>
 
 <template>
-  <div class="relative flex-1 overflow-hidden rounded-carousel bg-jk-carousel shadow-carousel">
+  <div class="relative min-h-70 flex-1 overflow-hidden rounded-carousel bg-jk-carousel shadow-carousel sm:min-h-90">
     <!-- slides (crossfade) -->
     <div
       v-for="(slide, i) in slides"
       :key="i"
       class="absolute inset-0 transition-opacity duration-600"
-      :class="i === current ? 'z-[2] opacity-100' : 'z-[1] opacity-0'"
+      :class="i === current ? 'z-20 opacity-100' : 'z-10 opacity-0'"
     >
       <NuxtImg
         v-if="slide.src"
@@ -79,10 +79,10 @@ onUnmounted(() => timer && clearInterval(timer))
     </div>
 
     <!-- top gradient for badge legibility -->
-    <div class="pointer-events-none absolute inset-x-0 top-0 z-[3] h-32 bg-gradient-to-b from-jk-ink/40 to-transparent" />
+    <div class="pointer-events-none absolute inset-x-0 top-0 z-30 h-32 bg-linear-to-b from-jk-ink/40 to-transparent" />
 
     <!-- launch badge overlay -->
-    <div class="pointer-events-none absolute left-4 top-4 z-[4]">
+    <div class="pointer-events-none absolute left-4 top-4 z-40">
       <LaunchBadge overlay />
     </div>
 
@@ -90,7 +90,7 @@ onUnmounted(() => timer && clearInterval(timer))
     <button
       type="button"
       aria-label="Previous photo"
-      class="absolute left-4 top-1/2 z-[5] flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-jk-surface/90 text-jk-ink shadow-badge transition-colors hover:bg-jk-surface"
+      class="absolute left-4 top-1/2 z-50 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-jk-surface/90 text-jk-ink shadow-badge transition-colors hover:bg-jk-surface"
       @click="prev"
     >
       <UIcon name="i-lucide-chevron-left" class="size-6" />
@@ -98,15 +98,15 @@ onUnmounted(() => timer && clearInterval(timer))
     <button
       type="button"
       aria-label="Next photo"
-      class="absolute right-4 top-1/2 z-[5] flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-jk-surface/90 text-jk-ink shadow-badge transition-colors hover:bg-jk-surface"
+      class="absolute right-4 top-1/2 z-50 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-jk-surface/90 text-jk-ink shadow-badge transition-colors hover:bg-jk-surface"
       @click="next"
     >
       <UIcon name="i-lucide-chevron-right" class="size-6" />
     </button>
 
     <!-- dots -->
-    <div class="absolute bottom-4 right-4 z-[5] flex items-center gap-2">
-      <button
+    <div class="absolute bottom-4 right-4 z-50 flex items-center gap-2">
+for      <button
         v-for="(slide, i) in slides"
         :key="i"
         type="button"

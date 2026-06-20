@@ -5,25 +5,25 @@ const legal = ['Privacy', 'Terms', 'Allergens']
 </script>
 
 <template>
-  <footer id="contact" class="bg-jk-ink px-6 pb-10 pt-[62px] text-jk-footer-text lg:px-16">
-    <div class="mx-auto max-w-[1312px]">
-      <div class="grid gap-12 border-b border-jk-footer-text/15 pb-[42px] md:grid-cols-3 lg:grid-cols-[1.4fr_1fr_1fr]">
+  <footer id="contact" class="bg-jk-ink px-6 pb-10 pt-15.5 text-jk-footer-text lg:px-16">
+    <div class="mx-auto max-w-328">
+      <div class="grid gap-12 border-b border-jk-footer-text/15 pb-10.5 md:grid-cols-3 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <div class="font-display text-[38px] font-extrabold leading-tight text-jk-cream">Jazz<span class="text-jk-saffron">Kitchen</span></div>
-          <p class="mt-4 max-w-[340px] text-base leading-relaxed text-jk-footer-muted">
+          <div class="font-display text-4xl font-extrabold leading-tight text-jk-cream">Jazz<span class="text-jk-saffron">Kitchen</span></div>
+          <p class="mt-4 max-w-85 text-base leading-relaxed text-jk-footer-muted">
             Real Punjabi home cooking, delivered fresh from one local family to yours. Launching soon in Romford.
           </p>
         </div>
 
         <div>
-          <div class="mb-4 font-display text-[17px] font-bold text-jk-cream">Get in touch</div>
+          <div class="mb-4 font-display text-lg font-bold text-jk-cream">Get in touch</div>
           <div class="flex flex-col gap-3 text-base text-jk-footer-muted">
             <div v-for="item in contact" :key="item">{{ item }}</div>
           </div>
         </div>
 
         <div>
-          <div class="mb-4 font-display text-[17px] font-bold text-jk-cream">Follow along</div>
+          <div class="mb-4 font-display text-lg font-bold text-jk-cream">Follow along</div>
           <div class="flex flex-col gap-3 text-base text-jk-footer-muted">
             <div v-for="item in social" :key="item">{{ item }}</div>
           </div>
